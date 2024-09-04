@@ -1,9 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net6.0;net5.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>security-scan</ToolCommandName>
@@ -24,11 +23,9 @@
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
-
   <PropertyGroup>
     <NoWarn>1701;1702;8601</NoWarn>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="..\ErrorLogger.cs" Link="ErrorLogger.cs" />
     <Compile Include="..\Hash.cs" Link="Hash.cs" />
@@ -38,7 +35,6 @@
     <Compile Include="..\SarifErrorLogger.cs" Link="SarifErrorLogger.cs" />
     <Compile Include="..\SarifV2ErrorLogger.cs" Link="SarifV2ErrorLogger.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="DotNet.Glob" Version="3.1.2" />
     <PackageReference Include="Microsoft.Build.Locator" Version="1.4.1" />
@@ -55,18 +51,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Threading.Tasks.Dataflow" Version="5.0.0" />
+    <PackageReference Include="System.Threading.Tasks.Dataflow" Version="8.0.1" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\SecurityCodeScan\SecurityCodeScan.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="..\..\SecurityCodeScan.Vsix\icon.png">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>
+      </PackagePath>
     </None>
   </ItemGroup>
-
 </Project>
